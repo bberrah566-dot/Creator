@@ -1373,7 +1373,7 @@ function renderCustomBars() {
     {name:'', pct:0, note:''}
   ];
   const wrap = document.getElementById('customBarsWrap');
-  wrap.innerHTML = D.cbars.map((b,i) => {
+  wrap.innerHTML =D[wk()].cbars.map((b,i) => {
     const cls = b.pct>=70?'hi':b.pct>=40?'md':'lo';
     return `
       <div class="custom-bar-card">
@@ -1393,8 +1393,8 @@ function renderCustomBars() {
 }
 
 function updateCBar(i, field, val) {
-  if(!D.cbars) return;
-  D.cbars[i][field] = field==='pct' ? parseInt(val) : val;
+  if(!D[wk()].cbars) return;
+  D[wk()].cbars[i][field] = field==='pct' ? parseInt(val) : val;
   save();
   if(field!=='pct') renderCustomBars();
 }
