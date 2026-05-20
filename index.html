@@ -1365,7 +1365,8 @@ function toggleInvDay(d) {
 
 // ─── CUSTOM BARS ───
 function renderCustomBars() {
-  if(!D[wk()].cbars) D.cbars = [
+  if(!D[wk()].cbars) D[wk()]
+  .cbars = [
     {name:'', pct:0, note:''},
     {name:'', pct:0, note:''},
     {name:'', pct:0, note:''},
